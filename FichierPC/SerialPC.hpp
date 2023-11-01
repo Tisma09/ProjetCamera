@@ -1,13 +1,14 @@
-#ifndef SERIAL_HPP
-#define SERIAL_HPP
+#ifndef SERIALPC_HPP
+#define SERIALPC_HPP
 
 #include <stdio.h>
 #include <stdint.h>
 #include <windows.h>
 #include <stdlib.h>
 
+static const char* device = "\\\\.\\COM6"; // Définition du port utilisé
 
-HANDLE initPort();
+HANDLE initPort(const char* device);
 
 void print_error(const char* context); // Gestion des erreurs
 HANDLE open_serial_port(const char * device, uint32_t baud_rate); // Fonction pour ouvrir le port
@@ -16,4 +17,4 @@ void closeHandle(); // Referme le port
 
 
 
-#endif // SERIAL_HPP
+#endif // SERIALPC_HPP

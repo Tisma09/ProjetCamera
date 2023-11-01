@@ -4,11 +4,10 @@
 //// GESTION DE LA COMMUNICATION AVEC LE PORT SERIAL ////
 /////////////////////////////////////////////////////////
 
-HANDLE port = initPort(); // Création du port dans une variable global pour pas avoir à le mettre en parametre des différentes fonction (ca poserait problème que les parametres sois différent pour les fonctions arduino et PC)
+HANDLE port = initPort(device); // Création du port dans une variable global pour pas avoir à le mettre en parametre des différentes fonction (ca poserait problème que les parametres sois différent pour les fonctions arduino et PC)
 
-HANDLE initPort()
+HANDLE initPort(const char* device)
 {
-    const char* device = "\\\\.\\COM6"; // Définition du port utilisé
     uint32_t baud_rate = 9600; // Définition du débits en bauds utilisé
     HANDLE port = open_serial_port(device, baud_rate); 
     return port;

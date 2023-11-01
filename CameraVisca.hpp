@@ -1,5 +1,5 @@
-#ifndef CAMERA_HPP
-#define CAMERA_HPP
+#ifndef CAMERAVISCA_HPP
+#define CAMERAVISCA_HPP
 
 #ifdef _WIN32 // Vraie si le programme est utilisé par un pc Windows
 #include "FichierPC/SerialPC.hpp"  // Inclut le code Windows
@@ -23,4 +23,4 @@ void moveCamDown(); // Bouge la caméra vers le bas
 void moveCamRight(); // Bouge la caméra vers la droite
 void moveCamLeft(); // Bouge la caméra vers la gauche
 
-#endif // CAMERA_HPP
+#endif // CAMERAVISCA_HPP
