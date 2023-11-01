@@ -1,9 +1,10 @@
 #ifndef KEYBOARDARDUINO_HPP
 #define KEYBOARDARDUINO_HPP
 
-#include <Arduino.h>
+#include <Arduino.h> // Library Arduino
 
-const int upPin = 52;
+// Définition des PIN
+const int upPin = 52; 
 const int downPin = 46;
 const int rightPin = 50;
 const int leftPin = 48;

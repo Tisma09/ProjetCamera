@@ -1,5 +1,9 @@
 #include "KeyboardPC.hpp"
 
+////////////////////////////////////////////
+//// VERIFICATION DE L'ETAT DES TOUCHES ////
+////////////////////////////////////////////
+
 bool pressUp() {
 	if (GetAsyncKeyState('Z') & 0x8000) {
 		return true;

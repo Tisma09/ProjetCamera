@@ -1,12 +1,13 @@
 #ifndef KEYBOARD_HPP
 #define KEYBOARD_HPP
 
-#include <windows.h>
+#include <windows.h> // On utilise la libray windows.h pour repéré les touches appuyés
 
-bool pressUp();
-bool pressDown();
-bool pressLeft();
-bool pressRight();
-bool pressEsc();
+//Controle aves ZQSD
+bool pressUp(); // Vrai si Z est touché
+bool pressDown(); // Vrai si Q est touché
+bool pressLeft(); // Vrai si S est touché
+bool pressRight(); // Vrai si D est touché
+bool pressEsc(); // Vrai si Echap est touché
 
 #endif // KEYBOARD_HPP

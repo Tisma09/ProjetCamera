@@ -7,9 +7,12 @@
 #include <stdlib.h>
 
 
-HANDLE open_serial_port(const char * device, uint32_t baud_rate);
-int write_port(const char* command, long long taille);
-void closeHandle();
+HANDLE initPort();
+
+void print_error(const char* context); // Gestion des erreurs
+HANDLE open_serial_port(const char * device, uint32_t baud_rate); // Fonction pour ouvrir le port
+int write_port(const char* command, long long taille); // Fonction pour ecrire les commandes au port
+void closeHandle(); // Referme le port
 
 
 

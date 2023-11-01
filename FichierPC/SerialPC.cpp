@@ -1,8 +1,18 @@
 #include "SerialPC.hpp"
 
-const char* device = "\\\\.\\COM6"; //Port
-uint32_t baud_rate = 9600;
-HANDLE port = open_serial_port(device, baud_rate);
+/////////////////////////////////////////////////////////
+//// GESTION DE LA COMMUNICATION AVEC LE PORT SERIAL ////
+/////////////////////////////////////////////////////////
+
+HANDLE port = initPort(); // Création du port dans une variable global pour pas avoir à le mettre en parametre des différentes fonction (ca poserait problème que les parametres sois différent pour les fonctions arduino et PC)
+
+HANDLE initPort()
+{
+    const char* device = "\\\\.\\COM6"; // Définition du port utilisé
+    uint32_t baud_rate = 9600; // Définition du débits en bauds utilisé
+    HANDLE port = open_serial_port(device, baud_rate); 
+    return port;
+}
 
 
 void print_error(const char * context)
@@ -26,7 +36,7 @@ HANDLE open_serial_port(const char * device, uint32_t baud_rate)
     if (port == INVALID_HANDLE_VALUE)
     {
         print_error(device);
-        exit(1);
+        exit(1); // Arrete le programme en cas de problème de port
         return INVALID_HANDLE_VALUE;
     }
 
@@ -36,7 +46,7 @@ HANDLE open_serial_port(const char * device, uint32_t baud_rate)
     {
         print_error("Failed to flush serial port");
         CloseHandle(port);
-        exit(1);
+        exit(1); // Arrete le programme en cas de problème de port
         return INVALID_HANDLE_VALUE;
     }
 
@@ -53,7 +63,7 @@ HANDLE open_serial_port(const char * device, uint32_t baud_rate)
     {
         print_error("Failed to set serial timeouts");
         CloseHandle(port);
-        exit(1);
+        exit(1); // Arrete le programme en cas de problème de port
         return INVALID_HANDLE_VALUE;
     }
 
@@ -69,7 +79,7 @@ HANDLE open_serial_port(const char * device, uint32_t baud_rate)
     {
         print_error("Failed to set serial settings");
         CloseHandle(port);
-        exit(1);
+        exit(1); // Arrete le programme en cas de problème de port
         return INVALID_HANDLE_VALUE;
     }
 
@@ -79,9 +89,12 @@ HANDLE open_serial_port(const char * device, uint32_t baud_rate)
 // Writes bytes to the serial port, returning 0 on success and -1 on failure.
 int write_port(const char* command, long long taille)
 {
+    // Conversion des parametres, le choix du type des parametres de la fonctions ont été fait pour que la fonction arduino et PC puissent prendre les meme parametres
     uint8_t* Msg = (uint8_t*)command;
     size_t size = taille;
     uint8_t * buffer = Msg;
+
+
     DWORD written;
     BOOL success = WriteFile(port, buffer, size, &written, NULL);
     if (!success)

@@ -1,8 +1,12 @@
 #include "KeyboardArduino.hpp"
 
+////////////////////////////////////////////
+//// VERIFICATION DE L'ETAT DES TOUCHES ////
+////////////////////////////////////////////
+
 bool pressUp()
 {
-	int upVal = digitalRead(upPin);
+	int upVal = digitalRead(upPin); // Valeur à HIGH quand il est pas touche
 	if (upVal == LOW) {
 		return true;
 	}
@@ -13,7 +17,7 @@ bool pressUp()
 
 bool pressDown()
 {
-	int downVal = digitalRead(downPin);
+	int downVal = digitalRead(downPin); // Valeur à HIGH quand il est pas touche
 	if (downVal == LOW) {
 		return true;
 	}
@@ -24,7 +28,7 @@ bool pressDown()
 
 bool pressLeft()
 {
-	int leftVal = digitalRead(leftPin);
+	int leftVal = digitalRead(leftPin); // Valeur à HIGH quand il est pas touche
 	if (leftVal == LOW) {
 		return true;
 	}
@@ -35,7 +39,7 @@ bool pressLeft()
 
 bool pressRight()
 {
-	int rightVal = digitalRead(rightPin);
+	int rightVal = digitalRead(rightPin); // Valeur à HIGH quand il est pas touche
 	if (rightVal == LOW) {
 		return true;
 	}

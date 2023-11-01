@@ -3,7 +3,7 @@
 
 #include "CameraVisca.hpp"
 
-#ifdef _WIN32
+#ifdef _WIN32 // Vraie si le programme est utilisé par un pc Windows
 #include <iostream>
 #include "FichierPC/KeyboardPC.hpp"  // Inclut le code Windows
 #else
