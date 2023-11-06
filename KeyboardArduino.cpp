@@ -6,8 +6,9 @@
 
 bool pressUp()
 {
-	int upVal = digitalRead(upPin); // Valeur à HIGH quand il est pas touche
+	int upVal = digitalRead(upPin); // Valeur Ã  HIGH quand il est pas touche
 	if (upVal == LOW) {
+		//Serial.print("UP"); Pour Debug
 		return true;
 	}
 	else {
@@ -17,8 +18,9 @@ bool pressUp()
 
 bool pressDown()
 {
-	int downVal = digitalRead(downPin); // Valeur à HIGH quand il est pas touche
+	int downVal = digitalRead(downPin); // Valeur Ã  HIGH quand il est pas touche
 	if (downVal == LOW) {
+		//Serial.print("DOWN"); Pour Debug
 		return true;
 	}
 	else {
@@ -28,8 +30,9 @@ bool pressDown()
 
 bool pressLeft()
 {
-	int leftVal = digitalRead(leftPin); // Valeur à HIGH quand il est pas touche
+	int leftVal = digitalRead(leftPin); // Valeur Ã  HIGH quand il est pas touche
 	if (leftVal == LOW) {
+		//Serial.print("LEFT"); Pour Debug
 		return true;
 	}
 	else {
@@ -39,8 +42,9 @@ bool pressLeft()
 
 bool pressRight()
 {
-	int rightVal = digitalRead(rightPin); // Valeur à HIGH quand il est pas touche
+	int rightVal = digitalRead(rightPin); // Valeur Ã  HIGH quand il est pas touche
 	if (rightVal == LOW) {
+		//Serial.print("RIGHT"); Pour Debug
 		return true;
 	}
 	else {
