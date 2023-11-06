@@ -1,6 +1,6 @@
 ﻿# Programme de contole d'une caméra Sony EVI-D70/D70P
 
-Ce programme permet de controler une camera grace au protocole VISCA ainsi que les normes de communications RS-232C/RS-422.
+Ce programme permet de controler une camera grace au protocole VISCA ainsi que la norme de communication RS-232.
 
 Les commandes prisent en charges permettent d'orienter la caméra dans toutes les directions. Les commandes sont dans le fichier `CameraVisca.h` et `CameraVisca.cpp`, elles peuvent etre modifier en utilisant les commandes VISCA listé dans [ce manuel](https://www.audiogeneral.com/Sony/evid70_manual.pdf).
 
